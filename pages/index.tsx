@@ -62,6 +62,7 @@ export default function Home({pageInfo, experiences, skills, projects, socials}:
 
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+  /*@ts-ignore*/
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();

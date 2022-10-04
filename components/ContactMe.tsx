@@ -33,7 +33,7 @@ function ContactMe() {
         <div className="space-y-10 px-0 md:px-10 max-w-6xl">
             <h4 className="text-4xl font-semibold text-center">
                 I have just what you need.{" "}
-                <span className="underline decoration-[#F7AB0A]/50">Let's Talk.</span>
+                <span className="underline decoration-[#F7AB0A]/50">Let`s Talk.</span>
             </h4>
 
             <div className="space-y-10">
