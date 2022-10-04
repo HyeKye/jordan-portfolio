@@ -1,23 +1,11 @@
 import React from 'react';
 import { EnvelopeIcon } from '@heroicons/react/24/solid'
-import { useForm, SubmitHandler } from "react-hook-form";
-import {motion} from 'framer-motion'
+import { useForm, ValidationError } from "@formspree/react";
+import { motion } from 'framer-motion'
 
-type Inputs = {
-  name: string,
-  email: string,
-  subject: string,
-  message: string
-};
+function ContactMe() {
+    const [state, handleSubmit] = useForm("xaykjlko");
 
-type Props = {}
-
-function ContactMe({}: Props) {
-    const { register, handleSubmit } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = formData => {
-        console.log(formData)
-        window.location.href = `mailto:jordan.k.wilia@gmail?subject=${formData.subject}&body=${formData.message}`
-    };
 
   return (
     <motion.div 
@@ -55,15 +43,20 @@ function ContactMe({}: Props) {
                 </div>
             </div>
             
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-2 w-fit mx-auto">
                 <div className="flex space-x-2">
-                    <input {...register('name')} className="contactInput" placeholder="Name" type="text" />
-                    <input {...register('email')} className="contactInput" placeholder="Email" type="email" />
-                </div>
-                    <input {...register('subject')} className="contactInput" placeholder="Subject" type="text" />
+                    <input id="name" className="contactInput" placeholder="Name" type="text" name="name"/>
 
-                    <textarea {...register('message')} className="contactInput" placeholder="Message"/>
-                    <button type="submit" className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">Submit</button>
+                    <input id="email" className="contactInput" placeholder="Email" type="email" name="email"/>
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
+                </div>
+                    <input id="subject" className="contactInput" placeholder="Subject" type="text" name="subject" />
+
+                    <textarea id="message" className="contactInput" placeholder="Message" name="message"/>
+
+                    <button type="submit" className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg" disabled={state.submitting}>Submit</button>
+                    <ValidationError errors={state.errors} />
+                    <p>{state.succeeded ? "Thank you for your message!" : ""}</p>
             </form>
         </div>
     </motion.div>
@@ -71,3 +64,4 @@ function ContactMe({}: Props) {
 }
 
 export default ContactMe
+
