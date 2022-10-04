@@ -12,6 +12,8 @@
 /.next/
 /out/
 
+sanit/node_modules
+
 # production
 /build
 
