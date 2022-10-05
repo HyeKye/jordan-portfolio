@@ -31,7 +31,7 @@ function ContactMe() {
         </h3>
 
         <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-            <h4 className="text-4xl font-semibold text-center">
+            <h4 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-semibold text-center">
                 I have just what you need.{" "}
                 <span className="underline decoration-[#F7AB0A]/50">Let`s Talk.</span>
             </h4>
@@ -39,12 +39,12 @@ function ContactMe() {
             <div className="space-y-10">
                 <div className="flex items-center space-x-5 justify-center">
                     <EnvelopeIcon className="text-[#F7AB0A] h-9 w-9 animate-pulse"/>
-                    <p className="text-2xl">Jordan.K.Wilia@gmail.com</p>
+                    <p className="text-xl sm:text-2xl">Jordan.K.Wilia@gmail.com</p>
                 </div>
             </div>
             
-            <form onSubmit={handleSubmit} className="flex flex-col space-y-2 w-fit mx-auto">
-                <div className="flex space-x-2">
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-2 m-2 sm:w-fit xl:mx-auto">
+                <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
                     <input id="name" className="contactInput" placeholder="Name" type="text" name="name"/>
 
                     <input id="email" className="contactInput" placeholder="Email" type="email" name="email"/>
