@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "utils/fetchExperiencests", "pages/app.js", "pages/api/hello.js"  ],
+, "utils/fetchExperiencests", "pages/index.tsx", "pages/app.js", "pages/api/hello.js"  ],
   "exclude": [
     "node_modules"
   ]
