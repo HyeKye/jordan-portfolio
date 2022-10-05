@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { urlFor } from '../sanity';
 import { Project } from '../typings'
+import Link from 'next/link'
 
 type Props = {
     projects: Project[];
@@ -20,8 +21,8 @@ function Projects({projects}: Props) {
             duration: 1.5
         }}
         className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
-        <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl hover:text-[#F7AB0A]/50">
-            <a href="https://docs.google.com/document/d/17S2aBiMwvD_RIVIUi_k7djp-PFewfXdadiQV929nrVM/edit?usp=sharing">
+        <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl hover:text-[#F7AB0A]/50 z-50">
+            <a className="flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center top-24 uppercase tracking-[20px] text-gray-500 text-2xl hover:text-[#F7AB0A]/50 z-50" href="https://docs.google.com/document/d/17S2aBiMwvD_RIVIUi_k7djp-PFewfXdadiQV929nrVM/edit?usp=sharing">
             Projects
             </a>
         </h3>
@@ -29,6 +30,7 @@ function Projects({projects}: Props) {
         <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
             {projects.map((project) => (
                 <div key={project._id} className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+                    
                     <motion.img 
                         initial={{
                             y:-300,
