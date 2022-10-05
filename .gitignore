@@ -14,7 +14,7 @@
 
 dataStarted
 
-sanit/node_modules
+sanity/node_modules
 
 # production
 /build
